@@ -1,0 +1,96 @@
+<form class="modal-content" action="/action_page.php">
+  <div class="container">
+<div id="reserva">
+<h3>Reserva de {{dataInicial | date: 'dd-MM-yyyy'}} até {{dataFinal | date: 'dd-MM-yyyy'}} de {{tipo}}</h3>
+<p>Preço: {{calculaPreco()}}</p>
+</div>
+</div>
+</form>
+<br>
+
+    <div *ngIf="inputReserva">
+      <form class="modal-content" action="/action_page.php">
+        <div class="container">
+    <h3>Dados da Reserva:</h3>
+    <label >Nome:
+      <input type="text" value="{{myStorage.getItem('nome')}}" #nome/>
+    </label> <br>
+    <label >Morada:
+      <input type="text" value="{{myStorage.getItem('morada')}}" #morada/>
+    </label> <br>
+    <label >Telefone:
+      <input type="text" value="{{myStorage.getItem('numero_telefone')}}" #telefone placeholder="+351 961111111"/>
+    </label> <br>
+    <label >Email:
+      <input type="text" value="{{myStorage.getItem('email')}}" #email/>
+    </label><br>
+    <label >Nif:
+      <input type="number" value="{{myStorage.getItem('nif')}}" #nif placeholder="123456789"/>
+    </label>
+  </div>
+  </form>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h3>Dados de Pagamento:</h3>
+      <label >Numero Cartão:
+        <input type="number" #numeroCartao placeholder="1111222233334444"/>
+      </label> <br>
+      <label > Ano:
+        <input type="number" #ano placeholder="20"/> <br>
+        Mês:
+        <input type="number" #mes placeholder="05"/><br>
+        CCV:
+        <input type="number" #ccv placeholder="111"/><br>
+      </label>
+
+      <br>
+      <button *ngIf="botaoR" (click)="mostraConf(nome.value, morada.value, telefone.value, email.value,
+      nif.value, numeroCartao.value, ano.value, mes.value, ccv.value)" class="button">Reservar</button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="confirmacao">
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <!--<label >Nome:
+        <input type="text" value="{{nome}}" #nome/>
+      </label> <br>
+      <label >Morada:
+        <input type="text" value="{{morada}}" #morada/>
+      </label> <br>
+      <label >Telefone:
+        <input type="text" value="{{telefone}}" #telefone/>
+      </label> <br>
+      <label >Email:
+        <input type="text" value="{{email}}" #email/>
+      </label><br>
+      <label >Nif:
+        <input type="number" value=" {{nif}}" #nif/>
+      </label><br>
+      <label >Numero Cartão:
+        <input type="number" #numeroCartao value="{{numeroCartao}}"/>
+      </label> <br>
+      <label>Validade do cartão:
+        <input type="number" #ano value="{{ano}}/{{mes}}"/> <br>
+      </label>
+      <label>CCV:
+        <input type="number" #ccv value="{{ccv}}"/><br>
+      </label><br>!-->
+  <div style="font-size: 20px;">
+  Nome:<input type="text" value="{{nome}}"><br>
+  Morada:<input type="text" value="{{morada}}"><br>
+  Telefone:<input type="text" value="{{telefone}}"><br>
+  Email:<input type="text" value="{{email}}"><br>
+  Nif:<input type="number" value="{{nif}}"><br>
+  Numero Cartão:<input type="number" value="{{numeroCartao}}"><br>
+  Validade do Cartão:<input type="text" value="{{ano}}/{{mes}}"> <br>
+  CCV:<input type="number" value="{{ccv}}"><br>
+</div>
+<br>
+<button  (click)="voltar()" class="button">Alterar Dados</button>
+<button (click)="addReserva()" class="button">Confirmar reserva</button>
+</div>
+</form>
+</div>

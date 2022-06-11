@@ -1,0 +1,25 @@
+<form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <!--<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>!-->
+      <!--<img src="./login/profile.png" alt="Avatar" class="image">!-->
+    </div>
+    <h1>Login</h1>
+    <div class="container">
+      <label for="uname"><b>Mail</b></label><br>
+      <input #username type="text" placeholder="Enter Mail"/>
+      <br>
+      <label for="psw"><b>Password</b></label><br>
+      <input #password type="password" placeholder="Enter Password"/>
+      <br>
+      <button type="button" (click)="loginCliente(username.value, password.value)">Login</button><br>
+      <!--<label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>-->
+    </div>
+
+    <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#" style="color:lightblue">password?</a></span>
+    </div>
+</form>
+<br>

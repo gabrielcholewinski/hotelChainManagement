@@ -1,0 +1,27 @@
+<div *ngIf="quartos&&tipo">
+  <table>
+  <tr>
+    <th>
+      <a>
+        <span class="nome">{{getTipoCerto(tipo)}}</span></a>
+    </th>
+  </tr>
+  <tr>
+    <td>{{getNumRoom(tipo)}} quarto(s)</td>
+  </tr>
+  <tr>
+    <td>Preco Época Baixa: {{getRoom(tipo).precoBaixo}} €<br> Preco Época Alta: {{getRoom(tipo).precoAlto}} €</td>
+  </tr>
+  <tr >
+    <button class="button" (click)="verServicos()">Ver servicos dos quartos</button>
+  </tr>
+  <tr *ngIf="show">
+    <td>
+      <p>Serviços disponíveis neste tipo de quarto:</p>
+      <ng-container *ngFor="let servico of getRoom(tipo).servicos">
+        <p class="nome">{{servico}}</p>
+      </ng-container>
+    </td>
+  </tr>
+</table>
+</div>

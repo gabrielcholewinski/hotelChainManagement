@@ -1,0 +1,25 @@
+{
+  "name": "express-projeto-psi",
+  "version": "1.0.0",
+  "description": "Repositório para o projeto de PSI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catralitos/Projeto-PSI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Catralitos/Projeto-PSI/issues"
+  },
+  "homepage": "https://github.com/Catralitos/Projeto-PSI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

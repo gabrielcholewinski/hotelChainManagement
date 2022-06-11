@@ -1,0 +1,41 @@
+<!--<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=3">!-->
+<html style="background-color: #edf2f4;">
+<div *ngIf="emailCliente !== null">
+  <div class="grid">
+    <div class="box_a">
+      <div class="header">
+        <h1 style="text-align: center; padding-top: 15px;">Cadeia de Hotéis<!--- {{emailCliente}}!--></h1>
+      </div>
+    </div>
+    <div class="box_b">
+      <div class="navbar">
+        <div *ngIf="emailCliente !== null && emailCliente.length === 0; else elseBlock">
+          <li *ngFor="let hotel2 of hotelList">
+            <a routerLink="/{{hotel2._id}}">
+              <span class="nome">{{hotel2.nome}}</span>
+            </a>
+          </li>
+          <a href="">Home</a>
+          <div class="topnav-right">
+            <a routerLink="/registar">Registar</a>
+            <a routerLink="/login">Login</a>
+          </div>
+        </div>
+        <ng-template #elseBlock>
+          <li *ngFor="let hotel2 of hotelList">
+            <a routerLink="/{{hotel2._id}}">
+              <span class="nome">{{hotel2.nome}}</span>
+            </a>
+          </li>
+          <a href="">Home</a>
+          <div class="topnav-right">
+            <a routerLink="/conta">Conta: {{emailCliente}}</a>
+            <a (click)="logOut()">Logout</a>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>

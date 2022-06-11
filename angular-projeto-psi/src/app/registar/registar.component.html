@@ -1,0 +1,61 @@
+<!--<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>!-->
+<html style="background-color: #edf2f4;">
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Registo</h1>
+      <p>Por favor preencha os dados necessários para criar uma conta. (Todos os campos são obrigatórios)</p>
+      <hr>
+      <label for="nome"><b>Nome </b></label>
+      <input #nome type="text" placeholder="Ex:Pedro Oliveira"/>
+
+      <label for="psw"><b>Password </b></label>
+      <input #pass type="password" placeholder="Ex:123456"/>
+
+      <label for="psw-repeat"><b>Repeat Password </b></label>
+      <input #passrepeat type="password" placeholder="Ex:123456"/>
+
+      <label for="morada"><b>Morada</b></label>
+      <input #morada type="text" placeholder="Ex:Rua das Macieiras"/>
+
+      <label for="telefone"><b>Telefone (por favor inclua o espaço entre o indicativo e o número)</b></label>
+      <input #tele type="text" placeholder="Ex:+351 912345678"/>
+
+      <label for="email"><b>Email </b></label>
+      <input #email type="text" placeholder="Ex:pedrooliveira@outlook.pt"/>
+
+      <label for="nif"><b>NIF</b></label>
+      <input #nif type="number" placeholder="Ex:123456789"/>
+
+
+      <p>Ao criar uma conta concorda com os nossos <a href="#" style="color:dodgerblue">Termos & Privacidade</a>.</p>
+
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancelar</button>
+        <button type="submit" class="signupbtn" (click)="registarCliente(nome.value, pass.value, passrepeat.value, morada.value, tele.value, email.value, nif.value)">Registar</button>
+      </div>
+    </div>
+  </form>
+  <br>
+
+
+<!--<h3>Dados de Pagamento: (opcional)</h3>
+<label >NºCartão:
+  <input #numCartao type="number" placeholder="Ex:1234567812345678"/>
+</label><br>
+<label > Ano:
+  <input #ano type="number" placeholder="Ex:21"/> <br>
+  Mês:
+  <input #mes type="number" placeholder="Ex:08"/><br>
+  CCV:
+  <input #ccv type="number" placeholder="Ex:123"/><br>
+</label>
+
+<p>Ao criar uma conta concorda com os nossos <a href="#" style="color:dodgerblue">Termos & Privacidade</a>.</p>
+
+<button>Cancelar</button>
+<button *ngIf="botaoR" (click)="mostraConf()" class="button">Registar</button>
+<input *ngIf="confR" type="checkbox" ng-model="checkbox.value">
+<label *ngIf="confR"> *Confirmo que todos os dados estão corretos</label>
+<br>!-->
+<!--<button *ngIf="confR" class="button" (click)="registarCliente(nome.value, pass.value, morada.value, tele.value, email.value, nif.value, numCartao.value, ccv.value, ano.value, mes.value)">Confirmar registo</button>!-->
